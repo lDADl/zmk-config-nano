@@ -26,11 +26,12 @@ RC(6,0) RC(6,1) RC(6,2) RC(6,3) RC(6,4) RC(6,5) RC(6,6) RC(6,7) RC(6,8) RC(6,9) 
         label = "KSCAN";
         diode-direction = "col2row";
         row-gpios
-            = 		<&nice_nano_v2 P0_24 GPIO_ACTIVE_HIGH>,
-                    <&nice_nano_v2 P0_00 GPIO_ACTIVE_HIGH>,
-                    <&nice_nano_v2 P0_11 GPIO_ACTIVE_HIGH>,
-                    <&nice_nano_v2 P0_04 GPIO_ACTIVE_HIGH>,
-                    <&nice_nano_v2 P0_06 GPIO_ACTIVE_HIGH>;
+				= <&nice_nano_v2 P0_24 GPIO_ACTIVE_HIGH>
+				, <&nice_nano_v2 P0_00 GPIO_ACTIVE_HIGH>
+				, <&nice_nano_v2 P0_11 GPIO_ACTIVE_HIGH>
+				, <&nice_nano_v2 P0_04 GPIO_ACTIVE_HIGH>
+				, <&nice_nano_v2 P0_06 GPIO_ACTIVE_HIGH>
+				;
     };
     
     sensors: sensors {
