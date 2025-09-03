@@ -8,7 +8,7 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <12>; // This must be 12 for a 6+6 split keyboard
+        columns = <12>;
         rows = <5>;
         map = <
 RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
@@ -24,12 +24,12 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(4,6) RC(4,7) RC(4,8) RC(4,9) 
         label = "KSCAN";
         diode-direction = "col2row";
         row-gpios
-				= <&nice_nano_v2 P1_06 GPIO_ACTIVE_HIGH>
-				, <&nice_nano_v2 P1_04 GPIO_ACTIVE_HIGH>
-				, <&nice_nano_v2 P0_14 GPIO_ACTIVE_HIGH>
-				, <&nice_nano_v2 P1_00 GPIO_ACTIVE_HIGH>
-				, <&nice_nano_v2 P0_24 GPIO_ACTIVE_HIGH>
-				;
+            = <&nice_nano_v2 P1_06 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P1_04 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P0_14 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P1_00 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P0_24 GPIO_ACTIVE_HIGH>
+            ;
     };
     
     sensors: sensors {
