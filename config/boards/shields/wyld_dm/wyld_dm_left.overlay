@@ -10,7 +10,8 @@
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 5>;
         divider-voltage = <3300>;
-        power-gpios = <&pro_micro 18 GPIO_ACTIVE_HIGH>;
+        // Correct pin reference for nice_nano_v2
+        power-gpios = <&nice_nano_v2 P1_05 GPIO_ACTIVE_HIGH>;
         full-dc-mv = <4200>;
         empty-dc-mv = <3000>;
     };
@@ -20,7 +21,8 @@
     };
 };
 
-&pro_micro_i2c {
+// Correct I2C bus reference for nice_nano_v2
+&nice_nano_i2c {
     status = "okay";
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -54,3 +56,12 @@
         ;
 };
 
+// Corrected encoder pins for nice_nano_v2 (example pins)
+&left_encoder {
+    compatible = "alps,ec11";
+    label = "LEFT_ENCODER";
+    a-gpios = <&nice_nano_v2 P0_17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&nice_nano_v2 P0_20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <60>;
+    status = "okay";
+};
