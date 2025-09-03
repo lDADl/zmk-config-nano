@@ -26,7 +26,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5)
         row-gpios
             = <&nice_nano_v2 P1_06 GPIO_ACTIVE_HIGH>
             , <&nice_nano_v2 P1_04 GPIO_ACTIVE_HIGH>
-            , <&nice_nano_v2 P0_14 GPIO_ACTIVE_HIGH> // P0_11 replaced with P0_14
+            , <&nice_nano_v2 P0_14 GPIO_ACTIVE_HIGH>
             , <&nice_nano_v2 P1_00 GPIO_ACTIVE_HIGH>
             , <&nice_nano_v2 P0_24 GPIO_ACTIVE_HIGH>
             ;
