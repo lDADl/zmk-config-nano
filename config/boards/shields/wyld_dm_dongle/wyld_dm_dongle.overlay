@@ -9,5 +9,6 @@
         compatible = "zmk,kscan-mock";
         rows = <0>;
         columns = <0>;
+        events = <>; // Add this line
     };
 };
