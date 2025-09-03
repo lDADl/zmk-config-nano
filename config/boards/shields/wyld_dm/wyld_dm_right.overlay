@@ -2,21 +2,36 @@
 
 #include "wyld_dm.dtsi"
 
+/ {
+    chosen {
+        zmk,battery = &vbatt;
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 5>;
+        divider-voltage = <3300>;
+        power-gpios = <&pro_micro 18 GPIO_ACTIVE_HIGH>;
+        full-dc-mv = <4200>;
+        empty-dc-mv = <3000>;
+    };
+};
+
 &default_transform {
     col-offset = <6>;
 };
 
 &kscan0 {
     col-gpios
-			= <&pro_micro_d 4  GPIO_ACTIVE_HIGH>
-			, <&pro_micro_d 5  GPIO_ACTIVE_HIGH>
-			, <&pro_micro_d 6  GPIO_ACTIVE_HIGH>
-			, <&pro_micro_d 7  GPIO_ACTIVE_HIGH>
-			, <&pro_micro_d 8  GPIO_ACTIVE_HIGH>
-            , <&pro_micro_d 9  GPIO_ACTIVE_HIGH>
-			;
+            = <&nice_nano_v2 P0_29 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P0_15 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P0_13 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P0_11 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P0_10 GPIO_ACTIVE_HIGH>
+            , <&nice_nano_v2 P0_09 GPIO_ACTIVE_HIGH>
+            ;
 };
 
 &right_encoder {
-	status = "okay";
+    status = "okay";
 };
