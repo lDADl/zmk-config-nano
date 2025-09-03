@@ -1,6 +1,4 @@
-// wyld_dm_right.overlay
-
-#include "wyld_dm.dtsi"
+#include "wyld_dm_common.dtsi"
 
 / {
     chosen {
@@ -15,6 +13,10 @@
         full-dc-mv = <4200>;
         empty-dc-mv = <3000>;
     };
+    
+    sensors {
+        sensors = <&right_encoder>;
+    };
 };
 
 &default_transform {
@@ -23,15 +25,20 @@
 
 &kscan0 {
     col-gpios
-            = <&nice_nano_v2 P0_29 GPIO_ACTIVE_HIGH>
-            , <&nice_nano_v2 P0_15 GPIO_ACTIVE_HIGH>
-            , <&nice_nano_v2 P0_13 GPIO_ACTIVE_HIGH>
-            , <&nice_nano_v2 P0_11 GPIO_ACTIVE_HIGH>
-            , <&nice_nano_v2 P0_10 GPIO_ACTIVE_HIGH>
-            , <&nice_nano_v2 P0_09 GPIO_ACTIVE_HIGH>
-            ;
+        = <&nice_nano_v2 P0_29 GPIO_ACTIVE_HIGH>
+        , <&nice_nano_v2 P0_15 GPIO_ACTIVE_HIGH>
+        , <&nice_nano_v2 P0_13 GPIO_ACTIVE_HIGH>
+        , <&nice_nano_v2 P0_11 GPIO_ACTIVE_HIGH>
+        , <&nice_nano_v2 P0_10 GPIO_ACTIVE_HIGH>
+        , <&nice_nano_v2 P0_09 GPIO_ACTIVE_HIGH>
+        ;
 };
 
 &right_encoder {
+    compatible = "alps,ec11";
+    label = "RIGHT_ENCODER";
+    a-gpios = <&pro_micro_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <60>;
     status = "okay";
 };
