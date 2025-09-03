@@ -6,20 +6,17 @@
 #
 # board: [ "nice_nano_v2" ]
 # shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
 #
 ---
 include:
   - board: nice_nano_v2
     shield: wyld_dm_left
+    config_file: wyld_dm_left.conf
   - board: nice_nano_v2
     shield: wyld_dm_right
+    config_file: wyld_dm_right.conf
   - board: nice_nano_v2
     shield: settings_reset
   - board: nice_nano_v2
     shield: wyld_dm_dongle
-    # Add the new configuration file
     config_file: wyld_dm_dongle.conf

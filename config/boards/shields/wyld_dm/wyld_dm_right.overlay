@@ -4,16 +4,16 @@
     chosen {
         zmk,battery = &vbatt;
     };
-
+    
     vbatt: vbatt {
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 5>;
         divider-voltage = <3300>;
-        power-gpios = <&pro_micro 18 GPIO_ACTIVE_HIGH>;
+        power-gpios = <&nice_nano_v2 P1_05 GPIO_ACTIVE_HIGH>;
         full-dc-mv = <4200>;
         empty-dc-mv = <3000>;
     };
-    
+
     sensors {
         sensors = <&right_encoder>;
     };
@@ -34,3 +34,11 @@
         ;
 };
 
+&right_encoder {
+    compatible = "alps,ec11";
+    label = "RIGHT_ENCODER";
+    a-gpios = <&nice_nano_v2 P1_07 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&nice_nano_v2 P1_08 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <60>;
+    status = "okay";
+};
