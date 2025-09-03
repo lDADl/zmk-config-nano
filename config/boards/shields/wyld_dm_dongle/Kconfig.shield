@@ -1,0 +1,2 @@
+config SHIELD_WYLD_DM_DONGLE
+  def_bool $(shields_list_contains,wyld_dm_dongle)
